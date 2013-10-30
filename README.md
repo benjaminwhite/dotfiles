@@ -1,6 +1,7 @@
 Instructions:
-'''bash
+
+```bash
 cd ~/.dotfiles
 chmod +x setup
 ./setup
-'''
+```
