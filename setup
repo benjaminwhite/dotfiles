@@ -1,0 +1,17 @@
+#!/bin/bash
+dir=~/.dotfiles
+olddir=~/.olddotfiles
+dotfiles=".bashrc .vimrc .gvimrc .zshrc .tmux.conf .pentadactylrc"
+
+for file in $dotfiles; do
+    if [ -f ~/$file ]; then
+        if [ ! -d $olddir ]; then
+            mkdir $olddir
+            echo "$olddir created."
+        fi
+        mv ~/$file $olddir
+        echo "Old $file moved to $olddir."
+    fi
+    ln -s $dir/$file ~/$file
+    echo "$file symlink created."
+done
