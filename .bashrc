@@ -4,6 +4,7 @@
 # General
 # ------------------------------------------------------------------------------
 
+platform=$(uname -s)
 # Return if not an interactive shell
 [[ "$-" != *i* ]] && return
 
@@ -54,7 +55,7 @@ function status_color() {
 export PROMPT_COMMAND='exit_status=$?;'
 
 # Surround color escape sequences in PS1 with \[ \] unless SunOS
-if [[ "$(uname -s)" == "SunOS" ]]; then
+if [[ $platform == "SunOS" ]]; then
     export PS1="$u\u$h@\h $wd\W \$(status_color)\\$ $reset"
 else
     export PS1="\[$u\]\u\[$h\]@\h \[$wd\]\W \[\$(status_color)\]\\$ \[$reset\]"
@@ -63,7 +64,11 @@ fi
 # ------------------------------------------------------------------------------
 # Options
 # ------------------------------------------------------------------------------
-export PATH="/usr/local/bin:/usr/local/sbin:~/Scripts/:~/Scripts/OSXey-Script/:$PATH"
+if [ $platform == "Darwin" ]; then
+    export PATH="/usr/local/bin:/usr/local/sbin:~/Scripts/:~/Scripts/OSXey-Script/:$PATH"
+else
+    export PATH="/usr/local/bin:/usr/local/sbin::$PATH"
+fi
 #Set vi Mode 
 set -o vi
 # ^l clear screen
@@ -109,4 +114,8 @@ alias engage="play -n -c1 synth whitenoise lowpass -1 120 lowpass -1 120 lowpass
 # ------------------------------------------------------------------------------
 # Archey 
 # ------------------------------------------------------------------------------
-OSXey
+if [ $platform == "Linux" ]; then
+    archey
+elif [ $platform == "Darwin" ]; then
+    OSXey
+fi
