@@ -74,7 +74,9 @@ filetype plugin indent on                   " required!
 " make compile nice
 autocmd FileType tex :nmap <Leader>ll \ll
 nnoremap <Leader>ss :LatexmkStop<CR>
-let g:LatexBox_latexmk_options = '-pvc'
+"let g:LatexBox_latexmk_options = '-pvc'
+let g:LatexBox_latexmk_preview_continuously=1
+"let g:LatexBox_latexmk_async=1
 " vim-latex-live-preview
 "autocmd Filetype tex setl updatetime=1
 "nmap <F12> :LLPStartPreview<cr>
@@ -85,7 +87,7 @@ let g:easytags_updatetime_warn = 0
 nnoremap <silent> <leader>u :GundoToggle<CR>
 
 " ========= Powerline ==========
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'compatible'
 
 " ========= nerdtree ==========
 nnoremap <C-t> :NERDTreeToggle<CR>
