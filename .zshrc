@@ -21,16 +21,22 @@ zman() {
 
 # Aliases
 alias ls="ls -F"
-alias block="sudo cp /Users/Ben/Documents/Jarvis/hosts.block /private/etc/hosts"
-alias httpserv="python -m SimpleHTTPServer"
+alias httpserv="python3 -m http.server"
 alias geeknote="python ~/geeknote/geeknote.py"
-alias gt="~/Documents/tui/gt.py"
-alias ip="curl icanhazip.com"
+alias gt="python ~/Projects/gt/sample.py"
+alias git="hub"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
 alias tmux.conf="vim ~/.tmux.conf"
+alias pwnable="virtualbox --startvm pwnable &"
+unalias sl
 
-
+#clear-ls () {
+    #clear
+    #ls
+#}
+#zle -N clear-ls
+#bindkey '^K' clear-ls
 
 #Set to this to use case-sensitive completion
 #CASE_SENSITIVE="true"
@@ -46,10 +52,10 @@ export EDITOR="vim"
 if [ $PLATFORM = "Darwin" ]; then
     alias macvim="mvim"
     alias checkblock="pgrep -f -l -u root blockOSX.py"
-    alias startblock="sudo /Users/Ben/Documents/Jarvis/blockOSX.py"
+    #alias startblock="sudo /Users/Ben/Documents/Jarvis/blockOSX.py"
 
     # Customize to your needs...
-    export PATH=/usr/local/bin:/usr/local/sbin:~/Scripts:~/Scripts/OSXey-Script:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:$PATH
+    export PATH=/usr/local/bin:/usr/local/sbin:/Users/Ben/Projects/Scripts/OSXey-Script:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:$PATH
 
     # Change color ls output
     export LSCOLORS=Exfxcxdxbxegedabagacad

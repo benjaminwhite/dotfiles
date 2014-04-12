@@ -28,8 +28,9 @@ Bundle 'gmarik/vundle'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
+"Bundle 'klen/python-mode'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
-Bundle 'Lokaltog/vim-powerline'
+Bundle 'bling/vim-airline'
 Bundle 'majutsushi/tagbar'
 "Bundle 'mattn/gist-vim'
 Bundle 'michaeljsmith/vim-indent-object'
@@ -40,6 +41,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 "Bundle 'sjl/vitality.vim'
 Bundle 'sjl/gundo.vim'
+Bundle 'terryma/vim-expand-region'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
@@ -54,6 +56,7 @@ Bundle 'xolox/vim-misc'
 
 " Color Schemes: 
 
+Bundle 'benjaminwhite/Benokai'
 Bundle 'tomasr/molokai'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'altercation/vim-colors-solarized'
@@ -86,14 +89,21 @@ let g:easytags_updatetime_warn = 0
 " ========= Gundo ==========
 nnoremap <silent> <leader>u :GundoToggle<CR>
 
-" ========= Powerline ==========
-let g:Powerline_symbols = 'compatible'
+" ========= Expand-Region ==========
+vmap v <Plug>(expand_region_expand)
 
+" ========= Airline ==========
+let g:airline_theme='powerlineish'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+"let g:airline_section_z=''
 " ========= nerdtree ==========
 nnoremap <C-t> :NERDTreeToggle<CR>
 
+" ========= pymode ==========
+let g:pymode_lint=0
 " ========= vim-notes ==========
-let g:notes_directories = ['~/Documents/Notes']
+"let g:notes_directories = ['~/Documents/Notes']
 
 " ========= YouCompleteMe ==========
 "nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
@@ -241,8 +251,13 @@ vnoremap ; :
 vnoremap : ;
 
 " Use comma as leader
-let mapleader = ','
-"let mapleader = "\<Space>"
+"let mapleader = ','
+
+" Folding
+nnoremap , za
+au BufRead * normal zR
+
+let mapleader = "\<Space>"
 let maplocalleader = "\\"
 nnoremap <silent> <leader>v :tabedit $MYVIMRC<cr>
 nnoremap <silent> <leader>V :source $MYVIMRC<cr>
@@ -302,8 +317,14 @@ nnoremap <c-o> <c-o>zz
 
 "set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 
+" Wrap
+set wrap
+
 " Show line numbers
 set number
+
+" Highlight 80th column
+set cc=80
 
 " Toggles line numbers and relative line numbers
 nnoremap <Leader>n :set number!<CR>
@@ -444,13 +465,14 @@ map <leader>et :tabe %%
 map <leader><Space> <leader>ci
 
 " Show syntax highlighting groups for word under cursor
-"nmap <leader>h :call <SID>SynStack()<CR>
+"nmap <leader>b :call <SID>SynStack()<CR>
 "function! <SID>SynStack()
     "if !exists("*synstack")
         "return
     "endif
     "echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 "endfunc
+
 cmap w!! %!sudo tee > /dev/null %
 " ----------------------------------
 " Abbreviations
@@ -460,8 +482,3 @@ iabbrev ldis ಠ_ಠ
 iabbrev lsad ಥ_ಥ
 iabbrev lhap ಥ‿ಥ
 iabbrev lmis ಠ‿ಠ
-iabbrev AA ∀
-iabbrev EE ∃
-iabbrev LL ¬
-iabbrev === ≡
-iabbrev [] ☐
