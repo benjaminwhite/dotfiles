@@ -20,16 +20,20 @@ zman() {
 }
 
 # Aliases
-alias ls="ls -F"
+alias jarvis='/Users/Ben/Projects/Jarvis/agent.py'
+
+alias ls="ls -FG"
 alias httpserv="python3 -m http.server"
 alias geeknote="python ~/geeknote/geeknote.py"
 alias gt="python ~/Projects/gt/sample.py"
 alias git="hub"
+alias tree="tree -F"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
 alias tmux.conf="vim ~/.tmux.conf"
-alias pwnable="virtualbox --startvm pwnable &"
-unalias sl
+alias refreshchrome='osascript -e "tell application \"Google Chrome\" to reload active tab of window 1"'
+
+#unalias sl
 
 #clear-ls () {
     #clear
@@ -37,6 +41,8 @@ unalias sl
 #}
 #zle -N clear-ls
 #bindkey '^K' clear-ls
+export GD=~/Google\ Drive/
+export CSS=~/.styling/pandoc.css
 
 #Set to this to use case-sensitive completion
 #CASE_SENSITIVE="true"

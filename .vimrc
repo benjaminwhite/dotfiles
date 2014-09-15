@@ -6,25 +6,18 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-" Initial Vundle Setup, courtesy of Erik Zaadi
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let iCanHazVundle=0
-endif
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" let Vundle manage Vundle, required
+Bundle 'gmarik/Vundle.vim'
 
 " plugins:
-
-Bundle 'gmarik/vundle'
 "Bundle 'coot/atp_vim'
 "Bundle 'ehamberg/vim-cute-python'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
@@ -33,8 +26,11 @@ Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'bling/vim-airline'
 Bundle 'majutsushi/tagbar'
 "Bundle 'mattn/gist-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'mileszs/ack.vim'
+"Bundle 'vim-pandoc/vim-pandoc'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
@@ -43,6 +39,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'sjl/gundo.vim'
 Bundle 'terryma/vim-expand-region'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
@@ -54,7 +51,7 @@ Bundle 'xolox/vim-misc'
 "Bundle 'xolox/vim-notes'
 "Bundle 'xuhdev/vim-latex-live-preview'
 
-" Color Schemes: 
+" Color Schemes:
 
 Bundle 'benjaminwhite/Benokai'
 Bundle 'tomasr/molokai'
@@ -63,14 +60,11 @@ Bundle 'altercation/vim-colors-solarized'
 "Bundle 'stephenmckinney/vim-solarized-powerline'
 "Bundle 'pearofducks/solarized-powerlines'
 
-if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :BundleInstall
-endif
-
+call vundle#end()
 filetype plugin indent on                   " required!
 
+let mapleader = "\<Space>"
+let maplocalleader = "\\"
 " ------------------------------------------------------------------------------
 " Plugin Specific
 " ------------------------------------------------------------------------------
@@ -86,6 +80,13 @@ let g:LatexBox_latexmk_preview_continuously=1
 " ========= EasyTags ==========
 let g:easytags_updatetime_warn = 0
 
+" ========= Emmet ==========
+"noremap <silent> <leader>h <C-y>,
+
+" ========= I'm being lazy ==========
+nnoremap <silent> <leader>o :!open %<CR><CR>
+
+nnoremap <silent> <leader>t :TagbarToggle<CR>
 " ========= Gundo ==========
 nnoremap <silent> <leader>u :GundoToggle<CR>
 
@@ -94,8 +95,11 @@ vmap v <Plug>(expand_region_expand)
 
 " ========= Airline ==========
 let g:airline_theme='powerlineish'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline_powerline_fonts = 1
+"let g:airline_left_sep='⮀'
+"let g:airline_right_sep='⮂'
 "let g:airline_section_z=''
 " ========= nerdtree ==========
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -112,7 +116,7 @@ let g:pymode_lint=0
 " General
 " ------------------------------------------------------------------------------
 
-"autocmd BufWriteCmd *.tex :!rubber --pdf % && rubber --clean % 
+"autocmd BufWriteCmd *.tex :!rubber --pdf % && rubber --clean %
 "&& open hw2-3.pdf && open -a iTerm
 
 nnoremap j gj
@@ -155,7 +159,7 @@ syntax enable
 set background=dark
 
 " -----------
-" Solarized 
+" Solarized
 " -----------
 "colorscheme solarized
 "let g:solarized_termtrans = 1
@@ -257,8 +261,6 @@ vnoremap : ;
 nnoremap , za
 au BufRead * normal zR
 
-let mapleader = "\<Space>"
-let maplocalleader = "\\"
 nnoremap <silent> <leader>v :tabedit $MYVIMRC<cr>
 nnoremap <silent> <leader>V :source $MYVIMRC<cr>
 nnoremap <silent> <leader>z :tabedit ~/.zshrc<cr>
@@ -282,10 +284,10 @@ nnoremap gO O<esc>j
 " Navigate splits more easily
 
 " Use ctrl-[hjkl] to select the active split!
-nnoremap <silent> <c-k> :wincmd k<CR>
-nnoremap <silent> <c-j> :wincmd j<CR>
-nnoremap <silent> <c-h> :wincmd h<CR>
-nnoremap <silent> <c-l> :wincmd l<CR>
+"nnoremap <silent> <c-k> :wincmd k<CR>
+"nnoremap <silent> <c-j> :wincmd j<CR>
+"nnoremap <silent> <c-h> :wincmd h<CR>
+"nnoremap <silent> <c-l> :wincmd l<CR>
 
 " Make arrow keys useful
 noremap <silent> <Up> :tabfirst<CR>
@@ -344,6 +346,12 @@ set shortmess+=Ia
 
 " Match pairs of angle brackets in HTML, XML, and Markdown
 autocmd FileType html,htmldjango,xml,markdown set matchpairs+=<:>
+
+" Recognize md files as markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.md setlocal spell
+
+set complete+=kspell
 
 " Toggles paste mode
 set pastetoggle=<F2>
