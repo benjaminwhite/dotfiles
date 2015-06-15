@@ -64,11 +64,6 @@ fi
 # ------------------------------------------------------------------------------
 # Options
 # ------------------------------------------------------------------------------
-if [ $platform == "Darwin" ]; then
-    export PATH="/usr/local/bin:/usr/local/sbin:~/Scripts/:~/Scripts/OSXey-Script/:$PATH"
-else
-    export PATH="/usr/local/bin:/usr/local/sbin::$PATH"
-fi
 #Set vi Mode 
 set -o vi
 # ^l clear screen

@@ -16,14 +16,28 @@ Bundle 'gmarik/Vundle.vim'
 " plugins:
 "Bundle 'coot/atp_vim'
 "Bundle 'ehamberg/vim-cute-python'
+Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'christoomey/vim-tmux-navigator'
+"Bundle 'christoomey/vim-tmux-navigator'
+Plugin 'cakebaker/scss-syntax.vim'
+Bundle 'derekwyatt/vim-scala'
+
+Bundle 'davidhalter/jedi-vim'
 Bundle 'ervandew/supertab'
 Bundle 'godlygeek/tabular'
+Bundle 'lilydjwg/colorizer'
+Bundle 'jlfwong/vim-mercenary'
 Bundle 'kien/ctrlp.vim'
 "Bundle 'klen/python-mode'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
+
 Bundle 'bling/vim-airline'
+let g:airline_theme='powerlineish'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#show_buffers = 1
+"set showtabline=1
+
 Bundle 'majutsushi/tagbar'
 "Bundle 'mattn/gist-vim'
 Bundle 'mattn/emmet-vim'
@@ -31,7 +45,11 @@ Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'mileszs/ack.vim'
 "Bundle 'vim-pandoc/vim-pandoc'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'plasticboy/vim-markdown'
+
 Bundle 'Raimondi/delimitMate'
+let delimitMate_nesting_quotes = ['`']
+
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
@@ -46,7 +64,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-characterize'
 "Bundle 'vim-scripts/RelOps'
 "Bundle 'Valloric/YouCompleteMe'
-Bundle 'xolox/vim-easytags'
+"Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 "Bundle 'xolox/vim-notes'
 "Bundle 'xuhdev/vim-latex-live-preview'
@@ -68,6 +86,8 @@ let maplocalleader = "\\"
 " ------------------------------------------------------------------------------
 " Plugin Specific
 " ------------------------------------------------------------------------------
+" vim-jedi
+autocmd FileType python setlocal completeopt-=preview
 " make compile nice
 autocmd FileType tex :nmap <Leader>ll \ll
 nnoremap <Leader>ss :LatexmkStop<CR>
@@ -94,10 +114,6 @@ nnoremap <silent> <leader>u :GundoToggle<CR>
 vmap v <Plug>(expand_region_expand)
 
 " ========= Airline ==========
-let g:airline_theme='powerlineish'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
-let g:airline_powerline_fonts = 1
 "let g:airline_left_sep='⮀'
 "let g:airline_right_sep='⮂'
 "let g:airline_section_z=''
@@ -284,10 +300,10 @@ nnoremap gO O<esc>j
 " Navigate splits more easily
 
 " Use ctrl-[hjkl] to select the active split!
-"nnoremap <silent> <c-k> :wincmd k<CR>
-"nnoremap <silent> <c-j> :wincmd j<CR>
-"nnoremap <silent> <c-h> :wincmd h<CR>
-"nnoremap <silent> <c-l> :wincmd l<CR>
+nnoremap <silent> <c-k> :wincmd k<CR>
+nnoremap <silent> <c-j> :wincmd j<CR>
+nnoremap <silent> <c-h> :wincmd h<CR>
+nnoremap <silent> <c-l> :wincmd l<CR>
 
 " Make arrow keys useful
 noremap <silent> <Up> :tabfirst<CR>
@@ -301,7 +317,7 @@ noremap <silent> <Right> :tabnext<CR>
 " ------------------------------------------------------------------------------
 
 " Stops newlines from automatically being made into a comment
-autocmd FileType * setlocal formatoptions-=ro
+"autocmd FileType * setlocal formatoptions-=ro
 
 
 " Keep search matches in the middle of the window.
@@ -349,7 +365,8 @@ autocmd FileType html,htmldjango,xml,markdown set matchpairs+=<:>
 
 " Recognize md files as markdown
 au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile *.md setlocal spell
+autocmd FileType markdown setlocal spell
+autocmd FileType markdown setlocal linebreak
 
 set complete+=kspell
 
@@ -397,10 +414,10 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set shiftround
 
 " Copy the indentation of the current line exactly for new lines
-set autoindent smartindent
+"set autoindent smartindent
 
 " Use soft tabs with 2 spaces per tab for CSS, HTML, XML, and JavaScript
-autocmd FileType css,html,htmldjango,xml,javascript Spaces 2
+autocmd FileType css,scss,html,htmldjango,xml,javascript Spaces 2
 
 " Use hard tabs with 4 spaces per tab for certain configuration files
 autocmd FileType make,gitconfig,sshconfig Tabs 4
@@ -457,7 +474,7 @@ nnoremap <Leader>? :let @/ = ''<CR>
 " Matches all characters past column 80
 nnoremap <Leader>c /\%>80v.\+<CR>
 
-" Matches all trailing whitespace
+" Matches all trailing whitespace 
 nnoremap <Leader>w /\s\+$<CR>
 
 " Removes all trailing whitespace
@@ -490,3 +507,30 @@ iabbrev ldis ಠ_ಠ
 iabbrev lsad ಥ_ಥ
 iabbrev lhap ಥ‿ಥ
 iabbrev lmis ಠ‿ಠ
+
+iabbrev _e ϵ
+
+iabbrev _0 ₀
+iabbrev _1 ₁
+iabbrev _2 ₂
+iabbrev _3 ₃
+iabbrev _4 ₄
+iabbrev _5 ₅
+iabbrev _6 ₆
+iabbrev _7 ₇
+iabbrev _8 ₈
+iabbrev _9 ₉
+
+iabbrev ^0 ⁰
+iabbrev ^1 ¹
+iabbrev ^2 ²
+iabbrev ^3 ³
+iabbrev ^4 ⁴
+iabbrev ^5 ⁵
+iabbrev ^6 ⁶
+iabbrev ^7 ⁷
+iabbrev ^8 ⁸
+iabbrev ^9 ⁹
+
+iabbrev f^ ḟ
+iabbrev Y^ Ŷ
