@@ -15,3 +15,6 @@ for file in $dotfiles; do
     ln -fs $dir/$file ~/.$file
     echo "$file symlink created."
 done
+
+# Install Vundle
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
