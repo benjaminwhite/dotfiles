@@ -49,7 +49,7 @@ autoload -U run-help
 autoload run-help-git
 autoload run-help-svn
 autoload run-help-svk
-unalias run-help
+unalias run-help &> /dev/null
 alias help=run-help
 
 # Allow comments in the CLI
