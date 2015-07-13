@@ -7,7 +7,7 @@ Please feel free to steal whatever you'd like.
 ## Installation:
 
 ```bash
-git clone https://github.com/benjaminwhite/dotfiles.git ~/dotfiles
+git clone --recursive https://github.com/benjaminwhite/dotfiles.git ~/dotfiles
 bash ~/dotfiles/setup
 ```
 
@@ -16,4 +16,4 @@ bash ~/dotfiles/setup
 - Vim
     - Package Manager: Vundle
 - Zsh
-    - Package Manager: Oh-my-zsh
+    - Package Manager: Antigen
