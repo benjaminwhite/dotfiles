@@ -32,8 +32,8 @@ antigen bundle benjaminwhite/vim-mode-for-oh-my-zsh
 
 # Theme
 # -----
-antigen theme benjaminwhite/console-theme console
 export CONSOLE_POWERLINE=TRUE
+antigen theme benjaminwhite/console-theme console
 
 antigen apply
 
