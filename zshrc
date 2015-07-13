@@ -33,6 +33,7 @@ antigen bundle benjaminwhite/vim-mode-for-oh-my-zsh
 # Theme
 # -----
 export CONSOLE_POWERLINE=TRUE
+export DISABLE_UNTRACKED_FILES_DIRTY=true
 antigen theme benjaminwhite/console-theme console
 
 antigen apply
