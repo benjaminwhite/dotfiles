@@ -161,6 +161,9 @@ set backspace=indent,eol,start
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 
+" Recognize *.md files as markdown
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
 " Use soft tabs with 4 spaces per tab by default
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 
