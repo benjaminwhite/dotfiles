@@ -24,38 +24,38 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 " -------
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 
-Bundle 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
 
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 set laststatus=2
 let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts = 1
 
-Bundle 'mattn/emmet-vim'
+Plugin 'mattn/emmet-vim'
 
-Bundle 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate'
 
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 nnoremap <C-t> :NERDTreeToggle<CR>
 
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 map <leader><Space> <leader>ci
 
-Bundle 'sjl/gundo.vim'
+Plugin 'sjl/gundo.vim'
 
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 
-Bundle 'tpope/vim-rails'
+Plugin 'tpope/vim-rails'
 
 " Color Schemes
 " -------------
-Bundle 'benjaminwhite/Benokai'
+Plugin 'benjaminwhite/Benokai'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
