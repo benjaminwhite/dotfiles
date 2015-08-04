@@ -57,6 +57,7 @@ setopt interactivecomments
 
 # Aliases
 # -------
+alias notes='cd ~/google-drive/notes'
 
 # Easily edit config files
 alias vimrc='vim ~/.vimrc'
