@@ -24,16 +24,16 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 " -------
+Plugin 'bling/vim-airline'
+set laststatus=2
+let g:airline_theme='powerlineish'
+let g:airline_powerline_fonts = 1
+
 Plugin 'ervandew/supertab'
 
 Plugin 'godlygeek/tabular'
 
 Plugin 'kien/ctrlp.vim'
-
-Plugin 'bling/vim-airline'
-set laststatus=2
-let g:airline_theme='powerlineish'
-let g:airline_powerline_fonts = 1
 
 Plugin 'mattn/emmet-vim'
 
@@ -110,7 +110,7 @@ noremap <silent> <Up> :tabfirst<CR>
 noremap <silent> <Down> :tablast<CR>
 noremap <silent> <Left> :tabprev<CR>
 noremap <silent> <Right> :tabnext<CR>
- 
+
 " Quickly edit and source vimrc
 nnoremap <silent> <leader>v :tabedit $MYVIMRC<cr>
 nnoremap <silent> <leader>V :source $MYVIMRC<cr>
