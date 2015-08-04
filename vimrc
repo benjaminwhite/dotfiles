@@ -37,6 +37,10 @@ Plugin 'kien/ctrlp.vim'
 
 Plugin 'mattn/emmet-vim'
 
+Plugin 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_frontmatter=1
+
 Plugin 'Raimondi/delimitMate'
 
 Plugin 'scrooloose/syntastic'
@@ -160,9 +164,6 @@ set backspace=indent,eol,start
 " Make insert mode more visible
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
-
-" Recognize *.md files as markdown
-au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 " Use soft tabs with 4 spaces per tab by default
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
