@@ -166,8 +166,11 @@ set backspace=indent,eol,start
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 
-" Use soft tabs with 4 spaces per tab by default
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+" Use soft tabs with 2 spaces per tab by default
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
 
 " Search as queries are typed
 set incsearch
