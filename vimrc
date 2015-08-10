@@ -29,6 +29,8 @@ set laststatus=2
 let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts = 1
 
+Plugin 'christoomey/vim-tmux-navigator'
+
 Plugin 'ervandew/supertab'
 
 Plugin 'godlygeek/tabular'
@@ -102,12 +104,6 @@ nnoremap N Nzzzv
 
 " Keep previous location in the middle of the window
 nnoremap <c-o> <c-o>zz
-
-" Use ctrl-[hjkl] to select the active split!
-nnoremap <silent> <c-k> :wincmd k<CR>
-nnoremap <silent> <c-j> :wincmd j<CR>
-nnoremap <silent> <c-h> :wincmd h<CR>
-nnoremap <silent> <c-l> :wincmd l<CR>
 
 " Make arrow keys useful (tab navigation)
 noremap <silent> <Up> :tabfirst<CR>
