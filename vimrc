@@ -144,6 +144,9 @@ set ttimeoutlen=50
 " Colors the 80th column
 set colorcolumn=80
 
+" Increase tab limit
+set tabpagemax=100
+
 " Split like every other program
 set splitbelow
 set splitright
