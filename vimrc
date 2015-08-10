@@ -125,7 +125,6 @@ nnoremap <silent> <leader>s :set spell!<cr>
 nnoremap <Leader>n :set number!<CR>
 nnoremap <Leader>r :set relativenumber!<CR>
 
-
 " ========
 " Settings
 " ========
@@ -135,6 +134,9 @@ set number
 
 " Enables line wrapping
 set wrap
+
+" Toggle paste mode with F2
+set pastetoggle=<F2>
 
 " Eliminates delay when pressing esc (tmux requires a similar setting)
 set ttimeoutlen=50
