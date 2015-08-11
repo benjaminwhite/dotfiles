@@ -66,3 +66,13 @@ alias notes='cd ~/google-drive/notes'
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
 alias tmux.conf='vim ~/.tmux.conf'
+
+# Functions
+# ---------
+
+# Use ctrl+z to bring to foreground, courtesy of Peter Jaros
+foreground-current-job() { fg; }
+zle -N foreground-current-job
+bindkey -M emacs '^z' foreground-current-job
+bindkey -M viins '^z' foreground-current-job
+bindkey -M vicmd '^z' foreground-current-job
