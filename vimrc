@@ -126,8 +126,8 @@ nnoremap <silent> <leader>z :tabedit ~/.zshrc<cr>
 nnoremap <silent> <leader>s :set spell!<cr>
 
 " Toggles line numbers and relative line numbers
-nnoremap <Leader>n :set number!<CR>
-nnoremap <Leader>r :set relativenumber!<CR>
+nnoremap <silent> <Leader>n :set number!<CR>
+nnoremap <silent> <Leader>r :set relativenumber!<CR>
 
 " ========
 " Settings
