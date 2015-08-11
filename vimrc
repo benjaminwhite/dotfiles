@@ -106,14 +106,15 @@ nnoremap N Nzzzv
 nnoremap <c-o> <c-o>zz
 
 " Make arrow keys useful (split resizing)
-noremap <silent> <Up> :resize -5<cr>
-noremap <silent> <Down> :resize +5<cr>
-noremap <silent> <Left> :vertical resize -5<cr>
-noremap <silent> <Right> :vertical resize +5<cr>
+nnoremap <silent> <Up> :resize -5<cr>
+nnoremap <silent> <Down> :resize +5<cr>
+nnoremap <silent> <Right> :vertical resize +5<cr>
+nnoremap <silent> <Left> :vertical resize -5<cr>
 
 " Tab Navigation
-noremap <silent> H :tabprev<CR>
-noremap <silent> L :tabnext<CR>
+nnoremap <silent> H :tabprev<CR>
+nnoremap <silent> L :tabnext<CR>
+
 
 " Quickly edit and source vimrc
 nnoremap <silent> <leader>v :tabedit $MYVIMRC<cr>
