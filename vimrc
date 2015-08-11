@@ -105,11 +105,15 @@ nnoremap N Nzzzv
 " Keep previous location in the middle of the window
 nnoremap <c-o> <c-o>zz
 
-" Make arrow keys useful (tab navigation)
-noremap <silent> <Up> :tabfirst<CR>
-noremap <silent> <Down> :tablast<CR>
-noremap <silent> <Left> :tabprev<CR>
-noremap <silent> <Right> :tabnext<CR>
+" Make arrow keys useful (split resizing)
+noremap <silent> <Up> :resize -5<cr>
+noremap <silent> <Down> :resize +5<cr>
+noremap <silent> <Left> :vertical resize -5<cr>
+noremap <silent> <Right> :vertical resize +5<cr>
+
+" Tab Navigation
+noremap <silent> H :tabprev<CR>
+noremap <silent> L :tabnext<CR>
 
 " Quickly edit and source vimrc
 nnoremap <silent> <leader>v :tabedit $MYVIMRC<cr>
