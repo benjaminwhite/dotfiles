@@ -115,6 +115,8 @@ nnoremap <silent> <Left> :vertical resize -5<cr>
 nnoremap <silent> H :tabprev<CR>
 nnoremap <silent> L :tabnext<CR>
 
+" Make K behave like J
+nnoremap K kddpkJ
 
 " Quickly edit and source vimrc
 nnoremap <silent> <leader>v :tabedit $MYVIMRC<cr>
