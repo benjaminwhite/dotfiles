@@ -30,6 +30,12 @@ let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts = 1
 
 Plugin 'christoomey/vim-tmux-navigator'
+let g:tmux_navigator_no_mappings = 1
+nnoremap <silent> <Esc>h :TmuxNavigateLeft<cr>
+nnoremap <silent> <Esc>j :TmuxNavigateDown<cr>
+nnoremap <silent> <Esc>k :TmuxNavigateUp<cr>
+nnoremap <silent> <Esc>l :TmuxNavigateRight<cr>
+nnoremap <silent> <Esc>\ :TmuxNavigatePrevious<cr>
 
 Plugin 'ervandew/supertab'
 
@@ -124,6 +130,9 @@ nnoremap <silent> <leader>V :source $MYVIMRC<cr>
 
 " Quickly edit zshrc
 nnoremap <silent> <leader>z :tabedit ~/.zshrc<cr>
+
+" Quickly edit tmux
+nnoremap <silent> <leader>t :tabedit ~/.tmux.conf<cr>
 
 " Enable/disable spell check
 nnoremap <silent> <leader>s :set spell!<cr>

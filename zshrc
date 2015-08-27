@@ -41,9 +41,6 @@ antigen apply
 # Custom
 # =======
 
-# Clear screen with ctrl+<space>
-bindkey '^ ' clear-screen
-
 # Vi options TODO: move to vim-mode plugin
 export KEYTIMEOUT=1
 
