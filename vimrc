@@ -24,6 +24,8 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugins
 " -------
+Plugin 'airblade/vim-gitgutter'
+
 Plugin 'bling/vim-airline'
 set laststatus=2
 let g:airline_theme='powerlineish'
