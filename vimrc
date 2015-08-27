@@ -41,6 +41,8 @@ Plugin 'ervandew/supertab'
 
 Plugin 'godlygeek/tabular'
 
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+
 Plugin 'kien/ctrlp.vim'
 
 Plugin 'mattn/emmet-vim'
@@ -60,6 +62,8 @@ Plugin 'scrooloose/nerdcommenter'
 map <leader><Space> <leader>ci
 
 Plugin 'sjl/gundo.vim'
+
+Plugin 'sjl/vitality.vim'
 
 Plugin 'tpope/vim-fugitive'
 
@@ -137,10 +141,6 @@ nnoremap <silent> <leader>t :tabedit ~/.tmux.conf<cr>
 " Enable/disable spell check
 nnoremap <silent> <leader>s :set spell!<cr>
 
-" Toggles line numbers and relative line numbers
-nnoremap <silent> <Leader>n :set number!<CR>
-nnoremap <silent> <Leader>r :set relativenumber!<CR>
-
 " ========
 " Settings
 " ========
@@ -177,10 +177,6 @@ set history=1000 undolevels=1000
 
 " Allow backspace in all situations
 set backspace=indent,eol,start
-
-" Make insert mode more visible
-autocmd InsertEnter * set cul
-autocmd InsertLeave * set nocul
 
 " Use soft tabs with 2 spaces per tab by default
 set tabstop=2
