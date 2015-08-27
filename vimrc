@@ -180,6 +180,10 @@ set history=1000 undolevels=1000
 " Allow backspace in all situations
 set backspace=indent,eol,start
 
+" Folding
+set foldmethod=syntax
+set foldcolumn=2
+
 " Use soft tabs with 2 spaces per tab by default
 set tabstop=2
 set softtabstop=2
