@@ -1,0 +1,4 @@
+noremap ; :
+
+noremap <silent> H :tabprev<cr>
+noremap <silent> L :tabnext<cr>
