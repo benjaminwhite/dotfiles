@@ -16,7 +16,7 @@ source "$DOTFILES/antigen/antigen.zsh"
 antigen use oh-my-zsh
 
 # Plugins (no repo means oh-my-zsh)
-# -------
+# ---------------------------------
 antigen bundle git
 antigen bundle pip
 antigen bundle ruby
@@ -27,9 +27,6 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # History search (must go after syntax highlighting)
 antigen bundle zsh-users/zsh-history-substring-search
 
-# My zsh vim mode plugin
-antigen bundle benjaminwhite/vim-mode-for-oh-my-zsh
-
 # Theme
 # -----
 export CONSOLE_POWERLINE=true
@@ -37,12 +34,9 @@ antigen theme benjaminwhite/console-theme console
 
 antigen apply
 
-# =======
+# ======
 # Custom
-# =======
-
-# Vi options TODO: move to vim-mode plugin
-export KEYTIMEOUT=1
+# ======
 
 # Enable help command
 autoload -U run-help
@@ -54,6 +48,24 @@ alias help=run-help
 
 # Allow comments in the CLI
 setopt interactivecomments
+
+# Vim-mode
+# -------
+bindkey -v
+export KEYTIMEOUT=1
+
+# Allow backspacing past where you started in insert mode
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+
+# Incrememntal search
+bindkey -M vicmd '/' history-incremental-search-backward
+bindkey -M viins '^r' history-incremental-search-backward
+
+# Allow Ctrl-p and Ctrl-n in insert mode
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 
 # Aliases
 # -------
