@@ -38,6 +38,8 @@ antigen apply
 # Custom
 # ======
 
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
 # Enable help command
 autoload -U run-help
 autoload run-help-git
@@ -50,7 +52,7 @@ alias help=run-help
 setopt interactivecomments
 
 # Vim-mode
-# -------
+# --------
 bindkey -v
 export KEYTIMEOUT=1
 
