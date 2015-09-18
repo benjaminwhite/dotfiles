@@ -74,6 +74,12 @@ bindkey '^n' history-search-forward
 
 alias notes='cd ~/google-drive/notes'
 
+# Git
+alias gg='git g'
+alias gca='git commit -v --amend'
+alias gcan='git commit --amend --no-edit'
+alias gdc='git diff --cached'
+
 # Easily edit config files
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
