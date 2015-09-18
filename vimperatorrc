@@ -1,3 +1,13 @@
+" Vimperator Run Commands
+"
+" Author: Ben White
+" URL: benwhite.io
+
+" ======== "
+" MAPPINGS "
+" ======== "
+
+" Easily bring up ex mode
 noremap ; :
 
 noremap <silent> H :tabprev<cr>

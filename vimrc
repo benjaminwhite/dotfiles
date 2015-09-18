@@ -2,15 +2,14 @@
 "
 " Author: Ben White
 " URL: benwhite.io
-"
 
 " Space is a better leader key than \
 let mapleader = "\<Space>"
 let maplocalleader = "\\"
 
-" ======
-" VUNDLE
-" ======
+" ====== "
+" VUNDLE "
+" ====== "
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -84,9 +83,9 @@ syntax enable
 " Best colorscheme ever
 colorscheme Benokai
 
-" ========
-" MAPPINGS
-" ========
+" ======== "
+" MAPPINGS "
+" ======== "
 
 " I use : far too much to press shift all the time
 nnoremap ; :
@@ -143,9 +142,9 @@ nnoremap <silent> <leader>t :tabedit ~/.tmux.conf<cr>
 " Enable/disable spell check
 nnoremap <silent> <leader>s :set spell!<cr>
 
-" ========
-" Settings
-" ========
+" ======== "
+" Settings "
+" ======== "
 
 " Show line numbers
 set number

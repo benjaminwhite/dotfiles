@@ -2,13 +2,13 @@
 #
 # Author: Ben White
 # URL: benwhite.io
-#
 
 export DOTFILES="$HOME/dotfiles"
 
-# ==========================
-# Antigen Plugins and Themes
-# ==========================
+# ========================== #
+# Antigen Plugins and Themes #
+# ========================== #
+
 export ADOTDIR="$DOTFILES/.antigen-repos"
 source "$DOTFILES/antigen/antigen.zsh"
 
@@ -34,9 +34,9 @@ antigen theme benjaminwhite/console-theme console
 
 antigen apply
 
-# ======
-# Custom
-# ======
+# ====== #
+# Custom #
+# ====== #
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
@@ -71,6 +71,7 @@ bindkey '^n' history-search-forward
 
 # Aliases
 # -------
+
 alias notes='cd ~/google-drive/notes'
 
 # Easily edit config files
