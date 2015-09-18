@@ -10,5 +10,19 @@
 " Easily bring up ex mode
 noremap ; :
 
-noremap <silent> H :tabprev<cr>
-noremap <silent> L :tabnext<cr>
+" Navigate tabs with Ctrl-h/l
+noremap <silent> <C-h> :tabprev<cr>
+noremap <silent> <C-l> :tabnext<cr>
+
+" stay in insert mode
+nnoremap I <S-Esc>
+
+" =========== "
+" Quick Marks "
+" =========== "
+
+" Google Mail
+qmark g https://www.google.com/mail
+
+" Google Calendar
+qmark c https://www.google.com/calendar
