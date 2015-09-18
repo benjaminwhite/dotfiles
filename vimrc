@@ -24,6 +24,7 @@ Plugin 'gmarik/Vundle.vim'
 " Plugins
 " -------
 Plugin 'airblade/vim-gitgutter'
+let g:gitgutter_escape_grep = 1
 
 Plugin 'bling/vim-airline'
 set laststatus=2
@@ -44,31 +45,31 @@ Plugin 'godlygeek/tabular'
 
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
-Plugin 'kien/ctrlp.vim'
-
-Plugin 'mattn/emmet-vim'
-
 Plugin 'plasticboy/vim-markdown'
-let g:vim_markdown_folding_disabled=1
-let g:vim_markdown_frontmatter=1
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
 
 Plugin 'Raimondi/delimitMate'
 
 Plugin 'scrooloose/syntastic'
 
 Plugin 'scrooloose/nerdtree'
-nnoremap <C-t> :NERDTreeToggle<CR>
+noremap <leader>f :NERDTreeToggle<CR>
 
 Plugin 'scrooloose/nerdcommenter'
 map <leader><Space> <leader>ci
 
 Plugin 'sjl/gundo.vim'
+let g:gundo_preview_bottom = 1
+noremap <leader>u :GundoToggle<CR>
 
 Plugin 'sjl/vitality.vim'
 
 Plugin 'tpope/vim-fugitive'
 
 Plugin 'tpope/vim-rails'
+
+Plugin 'tpope/vim-repeat'
 
 " Color Schemes
 " -------------
