@@ -184,7 +184,7 @@ set backspace=indent,eol,start
 
 " Folding
 set foldmethod=syntax
-set foldcolumn=2
+set foldcolumn=1
 
 " Use soft tabs with 2 spaces per tab by default
 set tabstop=2
