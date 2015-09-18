@@ -92,30 +92,17 @@ colorscheme Benokai
 nnoremap ; :
 vnoremap ; :
 
-" Navigate wrapped lines like any other line
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-
 " Make Y behave like D
 nnoremap Y y$
 
 " Make a new line without entering insert mode
 nnoremap go o<esc>k
-nnoremap gO o<esc>j
+nnoremap gO O<esc>j
 
 " Keep highlight when shifting
 vnoremap < <gv
 vnoremap > >gv
 vnoremap = =gv
-
-" Keep search matches in the middle of the window.
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
-" Keep previous location in the middle of the window
-nnoremap <c-o> <c-o>zz
 
 " Make arrow keys useful (split resizing)
 nnoremap <silent> <Up> :resize -5<cr>
@@ -124,11 +111,26 @@ nnoremap <silent> <Right> :vertical resize +5<cr>
 nnoremap <silent> <Left> :vertical resize -5<cr>
 
 " Tab Navigation
-nnoremap <silent> H :tabprev<CR>
-nnoremap <silent> L :tabnext<CR>
+noremap <silent> <C-h> :tabprev<CR>
+noremap <silent> <C-l> :tabnext<CR>
+noremap <silent> <Tab> :tabnext<CR>
+noremap <silent> <S-Tab> :tabprev<CR>
 
-" Make K behave like J
-nnoremap K kddpkJ
+" Scroll while moving the cursor
+noremap <C-j> <C-e>j
+noremap <C-k> <C-y>k
+
+" Jump to beginning and end of a line
+noremap H ^
+noremap L $
+
+" Jump to top and bottom of your screen
+noremap J L
+noremap K H
+
+" Append above or below line to current line
+nnoremap <leader>j J
+nnoremap <leader>k kddpkJ
 
 " Quickly edit and source vimrc
 nnoremap <silent> <leader>v :tabedit $MYVIMRC<cr>
