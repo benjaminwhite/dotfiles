@@ -57,7 +57,7 @@ Plugin 'scrooloose/nerdtree'
 noremap <leader>f :NERDTreeToggle<CR>
 
 Plugin 'scrooloose/nerdcommenter'
-map <leader><Space> <leader>ci
+noremap <Enter> :call NERDComment(0, "toggle")<CR>
 
 Plugin 'sjl/gundo.vim'
 let g:gundo_preview_bottom = 1
