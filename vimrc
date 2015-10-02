@@ -3,8 +3,8 @@
 " Author: Ben White
 " URL: benwhite.io
 
-" Space is a better leader key than \
-let mapleader = "\<Space>"
+" Enter is a better leader key than \
+let mapleader = "\<Enter>"
 let maplocalleader = "\\"
 
 " ====== "
@@ -57,7 +57,7 @@ Plugin 'scrooloose/nerdtree'
 noremap <leader>f :NERDTreeToggle<CR>
 
 Plugin 'scrooloose/nerdcommenter'
-noremap <Enter> :call NERDComment(0, "toggle")<CR>
+noremap <Space> :call NERDComment(0, "toggle")<CR>
 
 Plugin 'sjl/gundo.vim'
 let g:gundo_preview_bottom = 1
