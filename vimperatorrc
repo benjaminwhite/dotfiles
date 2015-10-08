@@ -22,7 +22,10 @@ nnoremap I <S-Esc>
 " =========== "
 
 " Google Mail
-qmark g https://www.google.com/mail
+qmark m https://www.google.com/mail
 
 " Google Calendar
 qmark c https://www.google.com/calendar
+
+" Google Drive
+qmark d https://drive.google.com/drive/u/0/starred
