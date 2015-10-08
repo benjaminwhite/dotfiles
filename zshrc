@@ -38,7 +38,7 @@ antigen apply
 # Custom #
 # ====== #
 
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Enable help command
 autoload -U run-help
