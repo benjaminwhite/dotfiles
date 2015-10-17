@@ -14,6 +14,10 @@ noremap ; :
 noremap <silent> <C-h> :tabprev<cr>
 noremap <silent> <C-l> :tabnext<cr>
 
+" Move tabs with Ctrl-Shift-h/l
+noremap <silent> <C-S-h> :tabmove -1<cr>
+noremap <silent> <C-S-l> :tabmove +1<cr>
+
 " stay in insert mode
 nnoremap I <S-Esc>
 

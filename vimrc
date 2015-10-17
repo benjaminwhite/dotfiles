@@ -116,21 +116,16 @@ noremap <silent> <C-l> :tabnext<CR>
 noremap <silent> <Tab> :tabnext<CR>
 noremap <silent> <S-Tab> :tabprev<CR>
 
+" Tab Moving
+noremap <silent> H :tabmove -1<CR>
+noremap <silent> L :tabmove +1<CR>
+
+" Append above line to current line
+nnoremap K kddpkJ
+
 " Scroll while moving the cursor
-noremap <C-j> <C-e>j
-noremap <C-k> <C-y>k
-
-" Jump to beginning and end of a line
-noremap H ^
-noremap L $
-
-" Jump to top and bottom of your screen
-noremap J L
-noremap K H
-
-" Append above or below line to current line
-nnoremap <leader>j J
-nnoremap <leader>k kddpkJ
+noremap <C-j> gj
+noremap <C-k> gk
 
 " Quickly edit and source vimrc
 nnoremap <silent> <leader>v :tabedit $MYVIMRC<cr>
