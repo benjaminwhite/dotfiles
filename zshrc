@@ -69,6 +69,9 @@ bindkey -M viins '^r' history-incremental-search-backward
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+# Insert argument from previous command
+bindkey '\e.' insert-last-word
+
 # Aliases
 # -------
 
