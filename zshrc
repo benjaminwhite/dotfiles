@@ -75,18 +75,29 @@ bindkey '\e.' insert-last-word
 # Aliases
 # -------
 
-alias notes='cd ~/google-drive/notes'
-
 # Git
+alias g='git'
 alias gg='git g'
 alias gca='git commit -v --amend'
 alias gcan='git commit --amend --no-edit'
-alias gdc='git diff --cached'
+alias gd='git diff -w'
+alias gdc='git diff -w --cached'
+
+# Tmux
+alias t='tmux'
+alias tls='tmux ls'
+alias tat='tmux attach -t'
+alias tnew='tmux new -s'
 
 # Easily edit config files
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
 alias tmux.conf='vim ~/.tmux.conf'
+alias vimperatorrc='vim ~/.vimperatorrc'
+
+# Misc
+alias notes='cd ~/google-drive/notes'
+alias p8='ping 8.8.8.8'
 
 # Functions
 # ---------
