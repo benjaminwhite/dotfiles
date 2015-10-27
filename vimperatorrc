@@ -25,11 +25,14 @@ nnoremap I <S-Esc>
 " Quick Marks "
 " =========== "
 
-" Google Mail
-qmark m https://www.google.com/mail
+" Gmail
+qmark g https://www.google.com/mail
 
 " Google Calendar
 qmark c https://www.google.com/calendar
+
+" Google Maps
+qmark m https://www.google.com/maps
 
 " Google Drive
 qmark d https://drive.google.com/drive/u/0/starred
