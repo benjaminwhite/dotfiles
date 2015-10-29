@@ -39,11 +39,13 @@ nnoremap <silent> <Esc>k :TmuxNavigateUp<cr>
 nnoremap <silent> <Esc>l :TmuxNavigateRight<cr>
 nnoremap <silent> <Esc>\ :TmuxNavigatePrevious<cr>
 
-Plugin 'ervandew/supertab'
-
 Plugin 'godlygeek/tabular'
 
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+
+Plugin 'nathanaelkane/vim-indent-guides'
+
+Plugin 'pangloss/vim-javascript'
 
 Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
@@ -51,19 +53,31 @@ let g:vim_markdown_frontmatter = 1
 
 Plugin 'Raimondi/delimitMate'
 
+Plugin 'rking/ag.vim'
+
 Plugin 'scrooloose/syntastic'
 
 Plugin 'scrooloose/nerdtree'
 noremap <leader>f :NERDTreeToggle<CR>
 
-Plugin 'scrooloose/nerdcommenter'
-noremap <Space> :call NERDComment(0, "toggle")<CR>
+if has("lua")
+  Plugin 'Shougo/neocomplete.vim'
+endif
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 Plugin 'sjl/gundo.vim'
 let g:gundo_preview_bottom = 1
-noremap <leader>u :GundoToggle<CR>
+noremap <silent> <leader>u :GundoToggle<CR>
 
 Plugin 'sjl/vitality.vim'
+
+Plugin 'tomtom/tcomment_vim'
+noremap <silent> <Space> :TComment<CR>
+vmap gcc gc
+
+Plugin 'tpope/vim-endwise'
 
 Plugin 'tpope/vim-fugitive'
 
