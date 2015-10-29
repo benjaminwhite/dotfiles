@@ -43,6 +43,10 @@ Plugin 'godlygeek/tabular'
 
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
+Plugin 'kien/ctrlp.vim'
+let g:ctrlp_map = '<NUL>'
+let g:ctrlp_working_path_mode = 'ra'
+
 Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'pangloss/vim-javascript'
@@ -140,6 +144,8 @@ nnoremap K kddpkJ
 " Scroll while moving the cursor
 noremap <C-j> gj
 noremap <C-k> gk
+
+noremap <C-t> :tabedit 
 
 " Quickly edit and source vimrc
 nnoremap <silent> <leader>v :tabedit $MYVIMRC<cr>
