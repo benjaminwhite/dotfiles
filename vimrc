@@ -43,10 +43,6 @@ Plugin 'godlygeek/tabular'
 
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
-Plugin 'kien/ctrlp.vim'
-let g:ctrlp_map = '<NUL>'
-let g:ctrlp_working_path_mode = 'ra'
-
 Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'pangloss/vim-javascript'
@@ -60,22 +56,32 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'rking/ag.vim'
 
 Plugin 'scrooloose/syntastic'
+let g:syntastic_check_on_open=1
 
 Plugin 'scrooloose/nerdtree'
 noremap <leader>f :NERDTreeToggle<CR>
 
 if has("lua")
   Plugin 'Shougo/neocomplete.vim'
+  let g:neocomplete#enable_at_startup = 1
+  let g:neocomplete#enable_smart_case = 1
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+else
+  Plugin 'ervandew/supertab'
 endif
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 Plugin 'sjl/gundo.vim'
 let g:gundo_preview_bottom = 1
 noremap <silent> <leader>u :GundoToggle<CR>
 
 Plugin 'sjl/vitality.vim'
+
+Plugin 'szw/vim-ctrlspace'
+if executable("ag")
+  let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
+endif
+nnoremap <silent><C-p> :CtrlSpace O<CR>
+" set showtabline=0
 
 Plugin 'tomtom/tcomment_vim'
 noremap <silent> <Space> :TComment<CR>
@@ -131,8 +137,8 @@ nnoremap <silent> <Left> :vertical resize -5<cr>
 " Tab Navigation
 noremap <silent> <C-h> :tabprev<CR>
 noremap <silent> <C-l> :tabnext<CR>
-noremap <silent> <Tab> :tabnext<CR>
-noremap <silent> <S-Tab> :tabprev<CR>
+" noremap <silent> <Tab> :tabnext<CR>
+" noremap <silent> <S-Tab> :tabprev<CR>
 
 " Tab Moving
 noremap <silent> H :tabmove -1<CR>
@@ -163,6 +169,9 @@ nnoremap <silent> <leader>s :set spell!<cr>
 " ======== "
 " Settings "
 " ======== "
+
+" Hide buffers instead of closing them
+set hidden
 
 " Show line numbers
 set number
