@@ -61,6 +61,10 @@ bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
 
+# Multi-level undo
+ bindkey -M vicmd 'u' undo
+ bindkey -M vicmd '^r' redo
+
 # Incrememntal search
 bindkey -M vicmd '/' history-incremental-search-backward
 bindkey -M viins '^r' history-incremental-search-backward
