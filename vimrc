@@ -77,15 +77,19 @@ noremap <silent> <leader>u :GundoToggle<CR>
 Plugin 'sjl/vitality.vim'
 
 Plugin 'szw/vim-ctrlspace'
+noremap <silent> <C-h> :tabprev<CR>
+noremap <silent> <C-j> :CtrlSpaceGoDown<CR>
+noremap <silent> <C-k> :CtrlSpaceGoUp<CR>
+noremap <silent> <C-l> :tabnext<CR>
+noremap <silent> <C-p> :CtrlSpace O<CR>
+noremap <silent> <Tab> :CtrlSpaceGoDown<CR>
+noremap <silent> <S-Tab> :CtrlSpaceGoUp<CR>
 if executable("ag")
   let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 endif
-nnoremap <silent><C-p> :CtrlSpace O<CR>
-" set showtabline=0
 
 Plugin 'tomtom/tcomment_vim'
 noremap <silent> <Space> :TComment<CR>
-vmap gcc gc
 
 Plugin 'tpope/vim-endwise'
 
@@ -94,6 +98,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 
 Plugin 'tpope/vim-repeat'
+
+Plugin 'Valloric/MatchTagAlways'
+let g:mta_filetypes = {'html': 1, 'xhtml': 1, 'xml': 1, 'jinja': 1, 'eruby': 1}
 
 " Color Schemes
 " -------------
@@ -123,35 +130,23 @@ nnoremap Y y$
 nnoremap go o<esc>k
 nnoremap gO O<esc>j
 
-" Keep highlight when shifting
-vnoremap < <gv
-vnoremap > >gv
-vnoremap = =gv
-
-" Make arrow keys useful (split resizing)
-nnoremap <silent> <Up> :resize -5<cr>
-nnoremap <silent> <Down> :resize +5<cr>
-nnoremap <silent> <Right> :vertical resize +5<cr>
-nnoremap <silent> <Left> :vertical resize -5<cr>
-
-" Tab Navigation
-noremap <silent> <C-h> :tabprev<CR>
-noremap <silent> <C-l> :tabnext<CR>
-" noremap <silent> <Tab> :tabnext<CR>
-" noremap <silent> <S-Tab> :tabprev<CR>
-
-" Tab Moving
-noremap <silent> H :tabmove -1<CR>
-noremap <silent> L :tabmove +1<CR>
+" Arrow Keys scroll (useful and friendly to those unfamiliar with vim)
+nnoremap <Left> zh
+nnoremap <Down> <C-e>
+nnoremap <Up> <C-y>
+nnoremap <Right> zl
 
 " Append above line to current line
 nnoremap K kddpkJ
 
-" Scroll while moving the cursor
-noremap <C-j> gj
-noremap <C-k> gk
-
-noremap <C-t> :tabedit 
+" Indentation shifting
+noremap H <<
+noremap L >>
+vnoremap H <gv
+vnoremap L >gv
+vnoremap < <gv
+vnoremap > >gv
+vnoremap = =gv
 
 " Quickly edit and source vimrc
 nnoremap <silent> <leader>v :tabedit $MYVIMRC<cr>
@@ -179,6 +174,9 @@ set number
 " Enables line wrapping
 set wrap
 
+" Vastly improved ex mode tab completion
+set wildmenu
+
 " Toggle paste mode with F2
 set pastetoggle=<F2>
 
@@ -205,10 +203,6 @@ set history=1000 undolevels=1000
 
 " Allow backspace in all situations
 set backspace=indent,eol,start
-
-" Folding
-set foldmethod=syntax
-set foldcolumn=1
 
 " Use soft tabs with 2 spaces per tab by default
 set tabstop=2
