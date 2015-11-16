@@ -69,9 +69,13 @@ bindkey '^w' backward-kill-word
 bindkey -M vicmd '/' history-incremental-search-backward
 bindkey -M viins '^r' history-incremental-search-backward
 
-# Allow Ctrl-p and Ctrl-n in insert mode
-bindkey '^p' history-search-backward
+# Allow ctrl-{n,p} in insert mode
 bindkey '^n' history-search-forward
+bindkey '^p' history-search-backward
+
+# Convienent ctrl-{j,k} history navigation
+bindkey '^j' history-search-forward
+bindkey '^k' history-search-backward
 
 # Insert argument from previous command
 bindkey '\e.' insert-last-word
@@ -100,6 +104,7 @@ alias tmux.conf='vim ~/.tmux.conf'
 alias vimperatorrc='vim ~/.vimperatorrc'
 
 # Misc
+alias sal='ssh-add -l'
 alias notes='cd ~/google-drive/notes'
 alias p8='ping 8.8.8.8'
 
