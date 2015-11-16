@@ -41,7 +41,7 @@ nnoremap <silent> <Esc>\ :TmuxNavigatePrevious<cr>
 
 Plugin 'godlygeek/tabular'
 
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plugin 'benjaminwhite/vim-numbertoggle'
 
 Plugin 'nathanaelkane/vim-indent-guides'
 
@@ -82,8 +82,6 @@ noremap <silent> <C-j> :CtrlSpaceGoDown<CR>
 noremap <silent> <C-k> :CtrlSpaceGoUp<CR>
 noremap <silent> <C-l> :tabnext<CR>
 noremap <silent> <C-p> :CtrlSpace O<CR>
-noremap <silent> <Tab> :CtrlSpaceGoDown<CR>
-noremap <silent> <S-Tab> :CtrlSpaceGoUp<CR>
 if executable("ag")
   let g:CtrlSpaceGlobCommand = 'ag -l --nocolor -g ""'
 endif
@@ -140,10 +138,10 @@ nnoremap <Right> zl
 nnoremap K kddpkJ
 
 " Indentation shifting
-noremap H <<
-noremap L >>
-vnoremap H <gv
-vnoremap L >gv
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 vnoremap < <gv
 vnoremap > >gv
 vnoremap = =gv
