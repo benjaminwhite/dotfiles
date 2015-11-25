@@ -11,15 +11,24 @@
 noremap ; :
 
 " Navigate tabs with Ctrl-h/l
-noremap <silent> <C-h> :tabprev<cr>
-noremap <silent> <C-l> :tabnext<cr>
+noremap <C-h> <C-p>
+noremap <C-l> <C-n>
 
 " Navigate history with Ctrl-j/k
-noremap <silent> <C-j> :back<cr>
-noremap <silent> <C-k> :forward<cr>
+noremap <C-j> <C-o>
+noremap <C-k> <C-i>
 
-" stay in insert mode
-nnoremap I <S-Esc>
+" Pass through navigation mappings
+imap <C-h> <Esc><C-h>
+imap <C-j> <Esc><C-j>
+imap <C-k> <Esc><C-k>
+imap <C-l> <Esc><C-l>
+
+" Command mode emacs bindings
+cmap <C-n> <down>
+cmap <C-p> <up>
+cmap <C-b> <Left>
+cmap <C-f> <Right>
 
 " =========== "
 " Quick Marks "
@@ -36,3 +45,9 @@ qmark m https://www.google.com/maps
 
 " Google Drive
 qmark d https://drive.google.com/drive/u/0/starred
+
+" ====== "
+" Ignore "
+" ====== "
+
+ignorekeys add docs\.google\.com -except <C-h>,<C-p>,<C-l>,<C-n>,<C-j>,<C-o>,<C-k>,<C-i>
