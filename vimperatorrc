@@ -3,12 +3,34 @@
 " Author: Ben White
 " URL: benwhite.io
 
+" ======= "
+" OPTIONS "
+" ======= "
+
+" Set Firefox chrome
+set gui=bookmarks,nonavigation
+
+" Try to stay in normal mode
+set focuscontent
+
+set visualbell
+highlight Bell display:none
+
 " ======== "
 " MAPPINGS "
 " ======== "
 
 " Easily bring up ex mode
 noremap ; :
+
+" Toggle navigation bar
+nnoremap v :set gui=invnavigation<CR>
+
+" Toggle bookmarks bar
+nnoremap V :set gui=invbookmarks<CR>
+
+" New tab
+noremap <C-t> t
 
 " Navigate tabs with Ctrl-h/l
 noremap <C-h> <C-p>
@@ -47,7 +69,7 @@ qmark m https://www.google.com/maps
 qmark d https://drive.google.com/drive/u/0/starred
 
 " ====== "
-" Ignore "
+" IGNORE "
 " ====== "
 
 ignorekeys add docs\.google\.com -except <C-h>,<C-p>,<C-l>,<C-n>,<C-j>,<C-o>,<C-k>,<C-i>
