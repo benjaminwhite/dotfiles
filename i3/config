@@ -1,0 +1,144 @@
+# i3wm Configuration File (with gaps)
+#
+# Author: Ben White
+# URL: benwhite.io
+
+# ========= #
+# Variables #
+# ========= #
+
+# Prefix
+set $mod                         Mod4
+
+# Sizes
+set $bordersize                  4
+set $myres                       10
+set $gsi                         40
+set $gso                         0
+
+# ============ #
+# Key Bindings #
+# ============ #
+
+bindsym $mod+h                   focus left
+bindsym $mod+j                   focus down
+bindsym $mod+k                   focus up
+bindsym $mod+l                   focus right
+
+bindsym $mod+semicolon           focus parent
+bindsym $mod+shift+semicolon     focus child
+
+bindsym $mod+Control+h           workspace prev_on_output
+bindsym $mod+Control+l           workspace next_on_output
+bindsym $mod+Shift+Tab           workspace prev
+bindsym $mod+Tab                 workspace next
+
+bindsym $mod+Escape              workspace Todoist
+bindsym $mod+grave               workspace Todoist
+
+exec --no-startup-id i3-msg 'workspace Todoist; exec chromium --kiosk todoist.com'
+
+### Workspace Keybindings ###
+# Show workspace
+bindsym $mod+1                   workspace 1
+bindsym $mod+2                   workspace 2
+bindsym $mod+3                   workspace 3
+bindsym $mod+4                   workspace 4
+bindsym $mod+5                   workspace 5
+bindsym $mod+6                   workspace 6
+bindsym $mod+7                   workspace 7
+bindsym $mod+8                   workspace 8
+bindsym $mod+9                   workspace 9
+bindsym $mod+0                   workspace 10
+
+# Move to workspace
+bindsym $mod+Shift+1             move container to workspace 1
+bindsym $mod+Shift+2             move container to workspace 2
+bindsym $mod+Shift+3             move container to workspace 3
+bindsym $mod+Shift+4             move container to workspace 4
+bindsym $mod+Shift+5             move container to workspace 5
+bindsym $mod+Shift+6             move container to workspace 6
+bindsym $mod+Shift+7             move container to workspace 7
+bindsym $mod+Shift+8             move container to workspace 8
+bindsym $mod+Shift+9             move container to workspace 9
+bindsym $mod+Shift+0             move container to workspace 10
+
+### Movement Keybindings
+bindsym $mod+Mod1+h              focus output left
+bindsym $mod+Mod1+j              focus output down
+bindsym $mod+Mod1+k              focus output up
+bindsym $mod+Mod1+l              focus output right
+
+bindsym $mod+Shift+h             move left
+bindsym $mod+Shift+j             move down
+bindsym $mod+Shift+k             move up
+bindsym $mod+Shift+l             move right
+
+bindsym $mod+Return              exec urxvt
+bindsym $mod+shift+Return        exec firefox
+bindsym $mod+space               exec rofi -show run
+bindsym $mod+shift+space         exec rofi -show window
+
+bindsym $mod+Shift+c             reload
+bindsym $mod+Shift+r             restart
+bindsym $mod+shift+q             exit
+bindsym $mod+w                   kill
+bindsym Print                    exec scrot
+
+workspace_auto_back_and_forth yes
+
+### Audio Keybindings ###
+bindsym XF86AudioRaiseVolume     exec "amixer -q set Master 5%+"
+bindsym XF86AudioLowerVolume     exec "amixer -q set Master 5%-"
+bindsym XF86AudioMute            exec "amixer -q sset Master,0 toggle"
+bindsym XF86AudioPlay            exec "playerctl play-pause"
+bindsym XF86AudioStop            exec "playerctl stop"
+bindsym XF86AudioPrev            exec "playerctl previous"
+bindsym XF86AudioNext            exec "playerctl next"
+
+### Backlight Keybindings ###
+bindsym XF86MonBrightnessUp      exec "light -A 10"
+bindsym XF86MonBrightnessDown    exec "light -U 10"
+bindsym XF86KbdBrightnessUp      exec "kbdlight up 20"
+bindsym XF86KbdBrightnessDown    exec "kbdlight down 20"
+
+### Layout Keybindings ###
+bindsym $mod+a                   split v
+bindsym $mod+s                   split h
+bindsym $mod+d                   split h; layout tabbed
+bindsym $mod+f                   floating toggle
+bindsym $mod+m                   fullscreen
+
+bindsym $mod+Left                 resize shrink width 30 px
+bindsym $mod+Right                resize grow width 30 px
+bindsym $mod+Down                 resize grow height 30 px
+bindsym $mod+Up                   resize shrink height 30 px
+
+floating_modifier $mod
+popup_during_fullscreen          smart
+workspace_layout                 default
+
+#######
+# BAR #
+#######
+exec --no-startup-id ~/.i3/lemonbar.rb
+
+##############
+# APPEARANCE #
+##############
+# class                 border  backgr. text    indicator
+client.focused          #d2fcfb #d2fcfb #2d2d2d #8e9279
+client.focused_inactive #566f74 #566f74 #dcdcdc #566f74
+client.unfocused        #334245 #334245 #dcdcdc #334245
+client.urgent           #ff613c #ff613c #dcdcdc #ff613c
+client.placeholder      #2d2d2d #2d2d2d #dcdcdc #2d2d2d
+
+# Set font
+font                             pango:Source Code Pro 12
+# Configure window borders
+hide_edge_borders                none
+gaps inner                       $gsi
+gaps outer                       $gso
+new_float                        pixel $bordersize
+new_window                       pixel $bordersize
+
