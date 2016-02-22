@@ -1,0 +1,61 @@
+! X11 Resources
+!
+! Author: Ben White
+! URL: benwhite.io
+
+! ======= !
+! General !
+! ======= !
+Xft.dpi: 226
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintfull
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+
+
+! ===== !
+! URxvt !
+! ===== !
+urxvt*font: xft:Fira Mono:size=8
+urxvt*urgentonBell: true
+urxvt*scrollBar: false
+urxvt*cursorBlink: true
+urxvt*internalBorder: 15
+urxvt*foreground: white
+urxvt*background: [50]black
+
+*color0:  #2E3436
+*color1:  #a40000
+*color2:  #4E9A06
+*color3:  #C4A000
+*color4:  #3465A4
+*color5:  #75507B
+*color6:  #ce5c00
+*color7:  #babdb9
+*color8:  #555753
+*color9:  #EF2929
+*color10: #8AE234
+*color11: #FCE94F
+*color12: #729FCF
+*color13: #AD7FA8
+*color14: #fcaf3e
+*color15: #EEEEEC
+
+! ==== !
+! Rofi !
+! ==== !
+rofi.font: Fira Mono 24
+rofi.separator-style: none
+rofi.hide-scrollbar: true
+rofi.terminal: urxvt
+rofi.lines: 10
+rofi.bw: 0
+rofi.bc: white
+rofi.bg: black
+rofi.fg: white
+rofi.hlbg: #d64937
+rofi.hlfg: black
+rofi.opacity: 80
+rofi.padding:	24
