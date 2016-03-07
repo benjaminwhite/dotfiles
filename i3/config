@@ -28,10 +28,10 @@ bindsym $mod+l                   focus right
 bindsym $mod+semicolon           focus parent
 bindsym $mod+shift+semicolon     focus child
 
-bindsym $mod+Control+h           workspace prev_on_output
-bindsym $mod+Control+l           workspace next_on_output
-bindsym $mod+Shift+Tab           workspace prev
-bindsym $mod+Tab                 workspace next
+bindsym $mod+Control+h           exec "~/.i3/numeric_workspace.rb --prev --on-output"
+bindsym $mod+Control+l           exec "~/.i3/numeric_workspace.rb --next --on-output"
+bindsym $mod+Shift+Tab           exec "~/.i3/numeric_workspace.rb --prev"
+bindsym $mod+Tab                 exec "~/.i3/numeric_workspace.rb --next"
 
 bindsym $mod+Escape              workspace Todoist
 bindsym $mod+grave               workspace Todoist
